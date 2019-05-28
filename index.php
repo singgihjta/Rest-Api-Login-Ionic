@@ -18,7 +18,7 @@ function login($request, $response) {
     try {        
         $db = getDB();
         $userData ='';
-        $sql = "SELECT  nama, email FROM users WHERE username=:username and password=:password";
+        $sql = "SELECT username, nama, email FROM users WHERE username=:username and password=:password";
         $stmt = $db->prepare($sql);
         $stmt->bindParam("username", $data['username'], PDO::PARAM_STR);
         $stmt->bindParam("password", $data['password'], PDO::PARAM_STR);
