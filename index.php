@@ -27,8 +27,8 @@ function login($request, $response) {
         $userData = $stmt->fetch(PDO::FETCH_OBJ);        
         if(!empty($userData))
         {
-            $MhswID=$userData->MhswID;
-            $userData->token = apiToken($MhswID);
+            $username=$userData->username;
+            $userData->token = apiToken($username);
          }        
         $db = null;
          if($userData){
